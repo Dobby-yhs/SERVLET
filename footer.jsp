@@ -1,5 +1,4 @@
 <%@ page contentType = "text/html;charset=utf-8"%>
-<%@ page import="java.util.Date"%>
 
 	<footer class = "container">
 		<p>
