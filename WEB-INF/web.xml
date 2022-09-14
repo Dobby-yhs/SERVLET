@@ -1,2 +1,12 @@
 <web-app>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+        <url-pattern>*.css</url-pattern>
+        <url-pattern>*.jpg</url-pattern>
+        <url-pattern>*.png</url-pattern>
+        <url-pattern>*.ico</url-pattern>
+        <url-pattern>*.wf</url-pattern>
+        <url-pattern>*.gif</url-pattern>
+    </servlet-mapping>
 </web-app>

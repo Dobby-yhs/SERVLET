@@ -3,8 +3,8 @@
 
 	<footer class = "container">
 		<p>
-	        &copy; 웹마켓 최하단 상태바 <br>
-	    
+	        &copy; 쇼핑몰 대표 : 윤해상, 고유번호 : 20191002, 연락처 : jjj1299@sungkyul.ac.kr <br>
+	
 	<%
    		Date day = new java.util.Date();
    		String am_pm;
