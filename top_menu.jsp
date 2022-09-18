@@ -1,12 +1,5 @@
 <%@ page contentType = "text/html;charset=utf-8"%>
 
-<nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class = "container">
-        <div class="navbar-header">
-			<a class="navbar-brand" href="./index.jsp">메뉴바:홈페이지</a>
-		</div>                
-	</div>
-</nav>
 
 <nav class="navbar navbar-expand navbar-white bg-white">
 	<div class="dropdown">
@@ -14,12 +7,13 @@
         	카테고리
         </button>
     	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">CPU</a>
-            <a class="dropdown-item" href="#">GPU</a>
-            <a class="dropdown-item" href="#">RAM</a>
-            <a class="dropdown-item" href="#">HD</a>
-            <a class="dropdown-item" href="#">SSD</a>
-            <a class="dropdown-item" href="#">CASE</a>
+            <a class="dropdown-item" href="#">후드 집업</a>
+            <a class="dropdown-item" href="#">맨투맨</a>
+            <a class="dropdown-item" href="#">셔츠</a>
+            <a class="dropdown-item" href="#">슈트</a>
+            <a class="dropdown-item" href="#">카디건</a>
+            <a class="dropdown-item" href="#">블루종</a>
+            <a class="dropdown-item" href="#">니트</a>
         </div>
     </div>
   	<div>
