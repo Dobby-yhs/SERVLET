@@ -10,9 +10,9 @@
             <a class="dropdown-item" href="#">후드 집업</a>
             <a class="dropdown-item" href="#">맨투맨</a>
             <a class="dropdown-item" href="#">셔츠</a>
-            <a class="dropdown-item" href="#">슈트</a>
-            <a class="dropdown-item" href="#">카디건</a>
-            <a class="dropdown-item" href="#">블루종</a>
+            <a class="dropdown-item" href="#">코트</a>
+            <a class="dropdown-item" href="#">가디건</a>
+            <a class="dropdown-item" href="#">자켓</a>
             <a class="dropdown-item" href="#">니트</a>
         </div>
     </div>

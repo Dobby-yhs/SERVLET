@@ -1,16 +1,49 @@
 <%@ page contentType = "text/html;charset=utf-8"%>
+<%@ page import = "java.util.ArrayList"%>
+<%@ page import = "dto.Product"%>
+<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />	<!-- page import와 use bean의 차이점 : scope 차이 / 위에는 껍데기 뿐, class="dao.ProductRepository"를 통해 객체 생성된 데이터 -->
 
-<%! String greeting = "꾸팡.COM에 오신것을 환영합니다.";
+<%! String greeting = "현재 페이지는 남자 옷 상품 목록입니다.";
 	String tagline = "하단페이지 : 확인";%>
 <div class = "jumbotron" style="text-align:center; margin: 0 350px 0 350px;">
 	<div class = "container">
-		<h1 class="display-3">
+		<h3>
 			<%=greeting%>
-		</h1>
+		</h3>
 	</div>
 </div>
 
+<%
+	ArrayList<Product> listOfProducts = productDAO.getAllProducts();
+%>
+
 <br><br><br>
+
+<div class="container">
+    <div class="row" align="center">
+        <%
+        	for (int i = 0; i < listOfProducts.size(); i++) {
+                Product product = listOfProducts.get(i);
+        %>
+        <div class="col-md-4">
+            <div class="card bg-dark text-white">
+                <img src="image/product/<%=product.getProductId()%>.jpg" class="card-img" alt="clothes_img">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">	옷 상품 </h5>
+                    <p class="card-text"> 출처 : 무신사 </p>
+                </div>
+            </div>
+            <h3> <%=product.getPname()%> </h3>
+            <p> <%=product.getDescription()%> </p>
+            <p> <%=product.getUnitPrice()%>원 </p>
+        </div>
+        <%
+        	}
+        %>
+    </div>    
+</div>
+
+<hr>
 
 <div class="container">
     <div class="row">
