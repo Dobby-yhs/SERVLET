@@ -14,6 +14,9 @@
             <a class="dropdown-item" href="#">가디건</a>
             <a class="dropdown-item" href="#">자켓</a>
             <a class="dropdown-item" href="#">니트</a>
+            <a class="dropdown-item" href="#">블루종</a>
+            <a class="dropdown-item" href="#">블레이저</a>
+
         </div>
     </div>
   	<div>

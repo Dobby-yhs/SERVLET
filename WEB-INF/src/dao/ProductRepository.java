@@ -60,7 +60,23 @@ public class ProductRepository {
         knit.setManufacturer("SUARE");
         knit.setUnitslnStock(5000);
         knit.setCondition("New");
+        
+        
+        Product blouson = new Product("P1008", "Wool Twill Blouson", 210000);
+		blouson.setDescription("POLYESTER 100% / COLOR : brown / WASHING : Dry Clining");
+        blouson.setCategory("Blouson");
+        blouson.setManufacturer("INSILENCE");
+        blouson.setUnitslnStock(5000);
+        blouson.setCondition("New");
     	
+        
+        Product blazer = new Product("P1009", "Relsaxed Basic Blazer", 70000);
+		blouson.setDescription("POLYESTER 67% / POLYURETHANE : 33% / COLOR : black / WASHING : Dry Clining");
+        blouson.setCategory("Blazer");
+        blouson.setManufacturer("MUTANDARD");
+        blouson.setUnitslnStock(5000);
+        blouson.setCondition("New");
+        
         
         listOfProducts.add(coat);
         listOfProducts.add(jacket);
@@ -69,6 +85,9 @@ public class ProductRepository {
         listOfProducts.add(mtm);
         listOfProducts.add(cardigan);
         listOfProducts.add(knit);
+        listOfProducts.add(blouson);
+        listOfProducts.add(blazer);
+
         
     }
     
