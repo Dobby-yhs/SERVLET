@@ -71,11 +71,11 @@ public class ProductRepository {
     	
         
         Product blazer = new Product("P1009", "Relsaxed Basic Blazer", 70000);
-		blouson.setDescription("POLYESTER 67% / POLYURETHANE : 33% / COLOR : black / WASHING : Dry Clining");
-        blouson.setCategory("Blazer");
-        blouson.setManufacturer("MUTANDARD");
-        blouson.setUnitslnStock(5000);
-        blouson.setCondition("New");
+		blazer.setDescription("POLYESTER 67% / POLYURETHANE : 33% / COLOR : black / WASHING : Dry Clining");
+        blazer.setCategory("Blazer");
+        blazer.setManufacturer("MUTANDARD");
+        blazer.setUnitslnStock(5000);
+        blazer.setCondition("New");
         
         
         listOfProducts.add(coat);
@@ -94,4 +94,18 @@ public class ProductRepository {
     public ArrayList<Product> getAllProducts() {
         return listOfProducts;
     }
+    
+    public Product getProductById(String productId) {
+        Product productById = null;
+        
+        for ( int i = 0 ; i < listOfProducts.size(); i++ ) {
+            Product product = listOfProducts.get(i);
+            if ( product != null && product.getProductId() != null && product.getProductId().equals(productId)) {
+                productById = product;
+                break;
+            }
+        }
+        return productById;
+    }
+    
 }
