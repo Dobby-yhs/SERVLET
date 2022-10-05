@@ -4,6 +4,12 @@ import dto.Product;
 
 public class ProductRepository {
     private ArrayList <Product> listOfProducts = new ArrayList<Product>();
+    private static ProductRepository instance = new ProductRepository();		// admin에서의 상품 정보 등록 위함
+    
+    public static ProductRepository getInstance() {
+        return instance;
+    }
+    
     
     public ProductRepository() {
         Product coat = new Product("P1001", "Gray_wale_coat", 296000);
@@ -106,6 +112,10 @@ public class ProductRepository {
             }
         }
         return productById;
+    }
+    
+    public void addProduct(Product product) {
+        listOfProducts.add(product);
     }
     
 }

@@ -13,10 +13,10 @@
     </head>
     <body>
         <%@ include file = "../top_banner.jsp" %>
-        <%@ include file = "../top_menu.jsp" %>
+        <%@ include file = "../admin/top_menu_ad" %>
         <div class = "jumbotron">
             <div class="container">
-                <h3 class="display-3"> 상품 정보 에러!! 홈페이지 관리자에게 문의해 주세요. </h3>
+                <h3 class="display-3"> 상품 등록 에러! 홈페이지에 문의해주세요. </h3>
             </div>
         </div>
         <%@ include file = "../footer.jsp" %>        
