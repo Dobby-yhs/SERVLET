@@ -18,7 +18,8 @@ public class ProductRepository {
         coat.setManufacturer("LMOOD");
         coat.setUnitslnStock(5000);
         coat.setCondition("New");
-    	
+    	coat.setFilename("P1001.jpg");
+
     
         Product jacket = new Product("P1002", "Glam_trucker_jacket", 223000);
 		jacket.setDescription("WOOL 70% / POLYURETHANE 30% / COLOR : burgundy / WASHING : Dry Clining");
@@ -26,7 +27,7 @@ public class ProductRepository {
         jacket.setManufacturer("LMOOD");
         jacket.setUnitslnStock(5000);
         jacket.setCondition("New");
-    	
+    	jacket.setFilename("P1002.jpg");
     
         Product shirt = new Product("P1003", "cutoff_crop_shirt", 117000);
 		shirt.setDescription("COTTON 97% / POLYURETHANE 3% / COLOR : gray / WASHING : Dry Clining");
@@ -34,7 +35,8 @@ public class ProductRepository {
         shirt.setManufacturer("COOR");
         shirt.setUnitslnStock(5000);
         shirt.setCondition("New");
-    	
+        shirt.setFilename("P1003.jpg");
+
     
         Product hood = new Product("P1004", "Sweat_Hood_ZipUp", 42000);
 		hood.setDescription("COTTON 60% / POLYURETHANE 40% / COLOR : oatmeal / WASHING : Clining");
@@ -42,7 +44,8 @@ public class ProductRepository {
         hood.setManufacturer("TOFFEE");
         hood.setUnitslnStock(5000);
         hood.setCondition("New");
-    	
+        hood.setFilename("P1004.jpg");
+
     
         Product mtm = new Product("P1005", "Pigment_mtm", 47600);
 		mtm.setDescription("COTTON 80% / POLYURETHANE 20% / COLOR : charcoal / WASHING : Hand Clining");
@@ -50,7 +53,8 @@ public class ProductRepository {
         mtm.setManufacturer("SOVERMENT");
         mtm.setUnitslnStock(5000);
         mtm.setCondition("New");
-    	
+        mtm.setFilename("P1005.jpg");
+
     
         Product cardigan = new Product("P1006", "Hwaran_Semiover_Cardigan", 71100);
 		cardigan.setDescription("WOOL 60% / ACRYLIC 20% / CASHNYLON 20% / COLOR : black / WASHING : Dry Clining");
@@ -58,7 +62,8 @@ public class ProductRepository {
         cardigan.setManufacturer("LMOOD");
         cardigan.setUnitslnStock(5000);
         cardigan.setCondition("New");
-    	
+        cardigan.setFilename("P1006.jpg");
+
    
         Product knit = new Product("P1007", "Washable_Knit", 59000);
 		knit.setDescription("ACRYLIC 75% / NYLON 25% / COLOR : mint / WASHING : Hand Clining");
@@ -66,7 +71,7 @@ public class ProductRepository {
         knit.setManufacturer("SUARE");
         knit.setUnitslnStock(5000);
         knit.setCondition("New");
-        
+        knit.setFilename("P1007.jpg");
         
         Product blouson = new Product("P1008", "Wool Twill Blouson", 210000);
 		blouson.setDescription("POLYESTER 100% / COLOR : brown / WASHING : Dry Clining");
@@ -74,7 +79,8 @@ public class ProductRepository {
         blouson.setManufacturer("INSILENCE");
         blouson.setUnitslnStock(5000);
         blouson.setCondition("New");
-    	
+        blouson.setFilename("P1008.jpg");
+
         
         Product blazer = new Product("P1009", "Relsaxed Basic Blazer", 70000);
 		blazer.setDescription("POLYESTER 67% / POLYURETHANE : 33% / COLOR : black / WASHING : Dry Clining");
@@ -82,8 +88,9 @@ public class ProductRepository {
         blazer.setManufacturer("MUTANDARD");
         blazer.setUnitslnStock(5000);
         blazer.setCondition("New");
-        
-        
+		blazer.setFilename("P1009.jpg");
+
+   
         listOfProducts.add(coat);
         listOfProducts.add(jacket);
         listOfProducts.add(shirt);
@@ -94,7 +101,7 @@ public class ProductRepository {
         listOfProducts.add(blouson);
         listOfProducts.add(blazer);
 
-        
+
     }
     
     public ArrayList<Product> getAllProducts() {

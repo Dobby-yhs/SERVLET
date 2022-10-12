@@ -1,7 +1,9 @@
 <%@ page contentType = "text/html;charset=utf-8"%>
 <%@ page import = "java.util.ArrayList"%>
 <%@ page import = "dto.Product"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />	<!-- page import와 use bean의 차이점 : scope 차이 / 위에는 껍데기 뿐, class="dao.ProductRepository"를 통해 객체 생성된 데이터 -->
+<%@ page import = "dao.ProductRepository"%>
+
+<!-- <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />	// page import와 use bean의 차이점 : scope 차이 / 위에는 껍데기 뿐, class="dao.ProductRepository"를 통해 객체 생성된 데이터 -->
 
 <%! String greeting = "현재 페이지는 남자 옷 상품 목록입니다.";
 	String tagline = "하단페이지 : 확인";%>
@@ -14,7 +16,8 @@
 </div>
 
 <%
-	ArrayList<Product> listOfProducts = productDAO.getAllProducts();
+	ProductRepository dao = ProductRepository.getInstance();
+	ArrayList<Product> listOfProducts = dao.getAllProducts();
 %>
 
 <br><br><br>
@@ -27,7 +30,7 @@
         %>
         <div class="col-md-4">
             <div class="card bg-dark text-white">
-                <img src="image/product/<%=product.getProductId()%>.jpg" class="card-img" alt="clothes_img">
+                <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="clothes_img">
                 <div class="card-img-overlay">
                     <h5 class="card-title">	옷 상품 </h5>
                     <p class="card-text"> 출처 : 무신사 </p>
@@ -36,7 +39,7 @@
             <h3> <%=product.getPname()%> </h3>
             <p> <%=product.getDescription()%> </p>
             <p> <%=product.getUnitPrice()%>원 </p>
-            <p> <a href = "product_detail.jsp?id=<%=product.getProductId()%>" class = "btn btn-secondary" rold = "button"> 상품 상세 정보 &raquo; </a> </p>
+            <p> <a href = "../admin/product_detail_ad.jsp?id=<%=product.getProductId()%>" class = "btn btn-secondary" rold = "button"> 상품 상세 정보 &raquo; </a> </p>
         </div>
         <%
         	}

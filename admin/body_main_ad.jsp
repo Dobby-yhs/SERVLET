@@ -30,7 +30,7 @@
         %>
         <div class="col-md-4">
             <div class="card bg-dark text-white">
-                <img src="../image/product/<%=product.getProductId()%>.jpg" class="card-img" alt="clothes_img">
+                <img src="../image/product/<%=product.getFilename()%>" class="card-img" alt="clothes_img">
                 <div class="card-img-overlay">
                     <h5 class="card-title">	옷 상품 </h5>
                     <p class="card-text"> 출처 : 무신사 </p>

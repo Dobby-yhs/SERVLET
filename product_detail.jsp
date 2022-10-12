@@ -36,7 +36,7 @@
                     <h4> <%=product.getUnitPrice()%> 원 </h4>
         
       				<div class="card bg-dark text-white">
-			            <img src="image/product/<%=product.getProductId()%>.jpg" class="card-img" alt="product_img">
+			            <img src="image/product/<%=product.getFilename()%>" class="card-img" alt="product_img">
 				            <div class="Card-img-overlay">
 				                <h5 class="card-title"> 상품 이미지 원본 </h5>
 				                <p class="card-text"> 출처 : 구글 검색 </p>
