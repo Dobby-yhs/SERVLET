@@ -4,8 +4,6 @@
 <%@ page import="com.oreilly.servlet.*"%>
 <%@ page import="com.oreilly.servlet.multipart.*"%>
 <%@ page import="java.util.Enumeration" %>
-<%@ page import="java.sql.*"%>
-<%@ include file="../db/db_conn.jsp"%>
 
 
 
@@ -49,24 +47,22 @@
     String fname = (String) files.nextElement();
     String fileName = multi.getFilesystemName(fname);
         
-    String sql = "insert into product values(?,?,?,?,?,?,?,?,?)";
-	pstmt = conn.prepareStatement(sql); // 쿼리문 몸체만 넣기
-	pstmt.setString(1, productId); // 각 필드 설정 - ? 순서대로
-	pstmt.setString(2, name);
-	pstmt.setInt(3, price);
-	pstmt.setString(4, description);
-	pstmt.setString(5, category);
-	pstmt.setString(6, manufacturer);
-	pstmt.setLong(7, stock);
-	pstmt.setString(8, condition);
-	pstmt.setString(9, fileName);
-	pstmt.executeUpdate(); // 최종 SQL 쿼리 실행
-	
-	if (pstmt != null)
- 		pstmt.close();
- 	if (conn != null)
-		conn.close();
+                                          
+	ProductRepository dao = ProductRepository.getInstance();
 
+    Product newProduct = new Product();
+    newProduct.setProductId(productId);
+	newProduct.setPname(name);
+	newProduct.setUnitPrice(price);
+	newProduct.setDescription(description);
+	newProduct.setManufacturer(manufacturer);
+	newProduct.setCategory(category);
+	newProduct.setUnitslnStock(stock);
+	newProduct.setCondition(condition);
+	newProduct.setFilename(fileName);
+
+
+	dao.addProduct(newProduct);
 	
 	response.sendRedirect("index_ad.jsp");	// ***** 자주 사용되는 것 / request ~ response
 %>
