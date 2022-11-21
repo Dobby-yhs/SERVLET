@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html;charset=utf-8"%>
 <%@ page import="com.oreilly.servlet.*"%>
 <%@ page import="com.oreilly.servlet.multipart.*"%>
 <%@ page import="java.util.*"%>
@@ -17,7 +17,7 @@
 	String description = multi.getParameter("description");
 	String manufacturer = multi.getParameter("manufacturer");
 	String category = multi.getParameter("category");
-	String unitsInStock = multi.getParameter("unitsInStock");
+	String unitslnStock = multi.getParameter("unitslnStock");
 	String condition = multi.getParameter("condition");
 
 	Integer price;
@@ -28,10 +28,10 @@
 		price = Integer.valueOf(unitPrice);
 	long stock;
 
-	if (unitsInStock.isEmpty())
+	if (unitslnStock.isEmpty())
 		stock = 0;
 	else
-		stock = Long.valueOf(unitsInStock);
+		stock = Long.valueOf(unitslnStock);
 
 	Enumeration files = multi.getFileNames();
 	String fname = (String) files.nextElement();
@@ -44,7 +44,7 @@
 
 	if (rs.next()) {
 	   if (fileName != null) {
-	      sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?, p_category=?, p_unitsInStock=?, p_condition=?, p_fileName=? WHERE p_id=?";
+	      sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?, p_category=?, p_unitslnStock=?, p_condition=?, p_fileName=? WHERE p_id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, name);
 		pstmt.setInt(2, price);
@@ -58,7 +58,7 @@
 		pstmt.executeUpdate();
 	   }
 	else {
-        sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?, p_category=?, p_unitsInStock=?, p_condition=? WHERE p_id=?";
+        sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?, p_category=?, p_unitslnStock=?, p_condition=? WHERE p_id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, name);
 		pstmt.setInt(2, price);

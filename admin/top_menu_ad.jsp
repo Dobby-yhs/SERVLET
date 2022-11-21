@@ -28,7 +28,7 @@
             <a class="navbar-brand" href="./index_ad.jsp">회원 관리</a>
             <a class="navbar-brand" href="index_ad.jsp">상품 보기</a>
             <a class="navbar-brand" href="product_add.jsp">상품 등록</a>
-            <a class="navbar-brand" href="product_edit.jsp?edit=update">상품 수정</a>
+            <a class="navbar-brand" href="product_edit.jsp?edit=update.jsp">상품 수정</a>
             <a class="navbar-brand" href="product_delete?edit=delete.jsp">상품 삭제</a>
             <a class="navbar-brand" href="../index.jsp">일반 모드</a>
         </div>

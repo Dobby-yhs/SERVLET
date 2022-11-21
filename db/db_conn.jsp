@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html;charset=utf-8"%>
 <%@ page import="java.sql.*"%> 
 <%
 	Connection conn = null;	
@@ -6,7 +6,7 @@
 	ResultSet rs = null;
 	
 	try {
-		String url = "jdbc:mysql://localhost:3306/ggoupang?characterEncoding=utf8";
+		String url = "jdbc:mysql://localhost:3306/ggouppang?characterEncoding=utf8";
 		String user = "root";
 		String password = "123123";
 

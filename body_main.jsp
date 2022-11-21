@@ -16,15 +16,20 @@
 	</div>
 </div>
 
-<%
-	ProductRepository dao = ProductRepository.getInstance();
-	ArrayList<Product> listOfProducts = dao.getAllProducts();
-%>
+<!-- 
 
-<br><br><br>
+//<
+//%
+//	ProductRepository dao = ProductRepository.getInstance();
+//	ArrayList<Product> listOfProducts = dao.getAllProducts();
+//%>
+-->
+<br><br><br> 
+
 
 <div class="container">
     <div class="row" align="center">
+
         <%@ include file="db/db_conn.jsp"%>
 	        <%
 		        String sql = "select * from product"; // 조회
@@ -44,7 +49,7 @@
             </div>
             <h3> <%=rs.getString("p_name")%> </h3>
             <p> <%=rs.getString("p_description")%> </p>
-            <p> <%=rs.getString("p_UnitPrice")%>원 </p>
+            <p> <%=rs.getString("p_unitPrice")%>원 </p>
             <p> <a href = "product_detail.jsp?id=<%=rs.getString("p_id")%>" class = "btn btn-secondary" role = "button"> 상품 상세 정보 &raquo; </a> </p>
         </div>
         <%
@@ -55,7 +60,7 @@
      			pstmt.close();
  		    if (conn != null)
 		    	conn.close();
-	    %>   
+	    %> 
     </div>
 
 </div>

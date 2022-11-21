@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html;charset=utf-8"%>
 <%@ page import="java.sql.*"%>
 
 <html>
@@ -43,7 +43,7 @@
                     <img src="../image/product/<%=rs.getString("p_fileName")%>" class="card-img" alt="...">
 		            <h3><%=rs.getString("p_name")%></h3>
 		            <p><%=rs.getString("p_description")%>
-		            <p><%=rs.getString("p_UnitPrice")%>원
+		            <p><%=rs.getString("p_unitPrice")%>원
 		            <p>
 		            <%
 		                 if (edit.equals("update")) {
