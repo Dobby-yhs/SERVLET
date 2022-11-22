@@ -29,22 +29,18 @@
 	String unitslnStock = multi.getParameter("unitslnStock");
 	String condition = multi.getParameter("condition");
 	
-/*
+
 	Integer price;
 
 	if (unitPrice.isEmpty())
         price = 0;
     else
         price = Integer.valueOf(unitPrice);
-*/
 
-    Integer price;
-    price = Integer.valueOf(unitPrice);
-    
 	long stock;
 
 	if (unitslnStock.isEmpty())
-        stock=0;
+        stock = 0;
     else
         stock = Long.valueOf(unitslnStock);
 

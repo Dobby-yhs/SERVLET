@@ -26,24 +26,95 @@
 	            </div>
                 <div class="form-group row">
 	                <label class="col-sm-2">배송일</label>
-	                <div class="col-sm-3">
+	                <div class="col-sm-4">
+                        <!-- <select name="shippingDate_year">
+                            <option value = "2022"> 2022 </option>
+                            <option value = "2023"> 2023 </option>
+                        </select>
+                        <select name="shippingDate_month">
+                            <option value = "1"> 1 </option>
+                            <option value = "2"> 2 </option>
+                            <option value = "3"> 3 </option>
+                            <option value = "4"> 4 </option>
+                            <option value = "5"> 5 </option>
+                            <option value = "6"> 6 </option>
+                            <option value = "7"> 7 </option>
+                            <option value = "8"> 8 </option>
+                            <option value = "9"> 9 </option>
+                            <option value = "10"> 10 </option>
+                            <option value = "11"> 11 </option>
+                            <option value = "12"> 12 </option>
+                        </select>
+                        <select name="shippingDate_day">
+                            <option value = "1"> 1 </option>
+                            <option value = "2"> 2 </option>
+                            <option value = "3"> 3 </option>
+                            <option value = "4"> 4 </option>
+                            <option value = "5"> 5 </option>
+                            <option value = "6"> 6 </option>
+                            <option value = "7"> 7 </option>
+                            <option value = "8"> 8 </option>
+                            <option value = "9"> 9 </option>
+                            <option value = "10"> 10 </option>
+                            <option value = "11"> 11 </option>
+                            <option value = "12"> 12 </option>
+                            <option value = "13"> 13 </option>
+                            <option value = "14"> 14 </option>
+                            <option value = "15"> 15 </option>
+                            <option value = "16"> 16 </option>
+                            <option value = "17"> 17 </option>
+                            <option value = "18"> 18 </option>
+                            <option value = "19"> 19 </option>
+                            <option value = "20"> 20 </option>
+                            <option value = "21"> 21 </option>
+                            <option value = "22"> 22 </option>
+                            <option value = "23"> 23 </option>
+                            <option value = "24"> 24 </option>
+                            <option value = "25"> 25 </option>
+                            <option value = "26"> 26 </option>
+                            <option value = "27"> 27 </option>
+                            <option value = "28"> 28 </option>
+                            <option value = "29"> 29 </option>
+                            <option value = "30"> 30 </option>
+                            <option value = "31"> 31 </option>
+                        </select> -->
 		                <input name="shippingDate" type="text" class="form-control" />(yyyy/mm/dd)
 	                </div>
 	            </div>
 	            <div class="form-group row">
 	                <label class="col-sm-2">국가명</label>
 	                <div class="col-sm-3">
-		                <input name="country" type="text" class="form-control" />
+                        <select name = "country" type="text" class="form-control">
+                            <option> 한국 </option>
+                            <option> 일본 </option>
+                            <option> 중국 </option>
+                            <option> 미국 </option>
+                            <!-- 
+                            <option value = "한국"> 한국 </option>
+                            <option value = "일본"> 일본 </option>
+                            <option value = "중국"> 중국 </option>
+                            <option value = "미국"> 미국 </option> 
+                            -->
+                        </select>
+		                <!-- <input name="country" type="text" class="form-control" /> -->
 	                </div>
 	            </div>
 	            <div class="form-group row">
 	                <label class="col-sm-2">우편번호</label>
-	                <div class="col-sm-3">
-	 	                <input name="zipCode" type="text" class="form-control" />
+	                <div class="col-sm-4">
+                        <input name="zipCode" type="text" class="form-control"/>
+                        <button type="button" onclick="openMap()"> 우편번호 찾기 </button>
+                        <script>
+                            function openMap() {
+                                window.open("../popup/popup_map.jsp", "popup", "width=500, height=450, left=0, top=0")
+                            }
+                            document.getElementById("zipCode").innerText = postcode;
+                        </script>
+	 	                <!-- <input name="zipCode" type="text" class="form-control" /> -->
 	                </div>
 	            </div>
                 <div class="form-group row">
-	                <label class="col-sm-2">주소</label>
+	                <label class="col-sm-2">상세주소</label>
 	                     <div class="col-sm-5">
 		                    <input name="addressName" type="text" class="form-control" />
 	                     </div>
