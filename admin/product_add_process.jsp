@@ -7,8 +7,6 @@
 <%@ page import="java.sql.*"%>
 <%@ include file="../db/db_conn.jsp"%>
 
-
-
 <%
 	request.setCharacterEncoding("UTF-8");
 	
@@ -28,15 +26,15 @@
 	String category = multi.getParameter("category");
 	String unitslnStock = multi.getParameter("unitslnStock");
 	String condition = multi.getParameter("condition");
-	
 
 	Integer price;
 
-	if (unitPrice.isEmpty())
+	if (unitPrice.isEmpty()){
         price = 0;
-    else
+    }
+    else{
         price = Integer.valueOf(unitPrice);
-
+    }
 	long stock;
 
 	if (unitslnStock.isEmpty())

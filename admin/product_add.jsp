@@ -23,57 +23,57 @@
                 <div class="form-group row">
                     <label class="col-sm-2">상품 코드</label>
                     <div class="col-sm-3">
-                        <input type="text" id="productId" class="form-control">
+                        <input type="text" id="productId" name="productId" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">상품명</label>
                     <div class="col-sm-3">
-                        <input type="text" id="name" class="form-control">
+                        <input type="text" id="name" name="name" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">가격</label>
                     <div class="col-sm-3">
-                        <input type="text" id="unitPrice" class="form-control">
+                        <input type="text" id="unitPrice" name="unitPrice" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">상세 정보</label>
                     <div class="col-sm-5">
-                        <textarea name="description" cols="50" rows="2" class="form-control"> </textarea>
+                        <textarea id="description" name="description" cols="50" rows="2" class="form-control"> </textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">제조사</label>
                     <div class="col-sm-3">
-                        <input type="text" name="manufacturer" class="form-control">
+                        <input type="text" id="manufacturer" name="manufacturer" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">분류</label>
                     <div class="col-sm-3">
-                        <input type="text" name="category" class="form-control">
+                        <input type="text" id="category" name="category" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">재고 수</label>
                     <div class="col-sm-3">
-                        <input type="text" id="unitslnStock" class="form-control">
+                        <input type="text" id="unitslnStock" name="unitslnStock" class="form-control">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">상태</label>
                     <div class="col-sm-3">
-                        <input type="radio" name="condition" value="New"> 신규
-                        <input type="radio" name="condition" value="Old"> 중고
-                        <input type="radio" name="condition" value="Refurbished"> 재생
+                        <input type="radio" id="condition" name="condition" value="New"> 신규
+                        <input type="radio" id="condition" name="condition" value="Old"> 중고
+                        <input type="radio" id="condition" name="condition" value="Refurbished"> 재생
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-2">이미지</label>
                     <div class="col-sm-5">
-                        <input type="file" name="productImage" class="form-control">
+                        <input type="file" id="productImage" name="productImage" class="form-control">
                     </div>
                 </div>
                 

@@ -1,7 +1,8 @@
-<%@ page contentType = "text/html;charset=utf-8" %>
+<%@ page contentType = "text/html;charset=utf-8" pageEncoding="UTF-8"%>
 
 <html>
     <head>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -102,14 +103,22 @@
 	            <div class="form-group row">
 	                <label class="col-sm-2">우편번호</label>
 	                <div class="col-sm-4">
-                        <input name="zipCode" type="text" class="form-control"/>
+                        <input name="zipCode" value="14256" type="text" class="form-control"/>
                         <button type="button" onclick="openMap()"> 우편번호 찾기 </button>
                         <script>
+                            
                             function openMap() {
                                 window.open("../popup/popup_map.jsp", "popup", "width=500, height=450, left=0, top=0")
+                            <%
+                                request.setCharacterEncoding("UTF-8");
+                                String postcode = request.getParameter("input_postnum");
+                            %>
+                                
+                                $('input[name=zipCode]').attr('value',"<%=postcode%>");
                             }
-                            document.getElementById("zipCode").innerText = postcode;
+                            
                         </script>
+                        
 	 	                <!-- <input name="zipCode" type="text" class="form-control" /> -->
 	                </div>
 	            </div>
