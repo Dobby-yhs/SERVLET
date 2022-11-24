@@ -8,7 +8,7 @@ public class Db_connection {
 	public static Connection getConnection()throws SQLException, ClassNotFoundException  {		
         
         Connection conn = null;
-        String url = "jdbc:mysql://localost:3306/ggouppang?characterEncoding=utf8";
+        String url = "jdbc:mysql://localhost:3306/ggouppang?characterEncoding=utf8";
         String user ="root";
         String password = "123123";
         
