@@ -29,7 +29,7 @@
 		            <h1 class="display-3">상품 편집</h1>
 	           </div>
 	    </div>
-
+    
 	    <div class="container">
 	        <div class="row" align="center">
 		    <%@ include file="../db/db_conn.jsp"%>
@@ -45,7 +45,11 @@
 		            <p><%=rs.getString("p_description")%>
 		            <p><%=rs.getString("p_unitPrice")%>원
 		            <p>
-		            <%
+                        <a href="product_update.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-success" role="button"> 수정 &raquo;></a>
+                        <a href="#" onclick="deleteConfirm('<%=rs.getString("p_id")%>')" class="btn btn-danger" role="button">삭제 &raquo;></a>
+		            
+                        
+                    <!-- <%
 		                 if (edit.equals("update")) {
 		            %>
 		            <a href="product_update.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-success" role="button"> 수정 &raquo;></a>
@@ -55,7 +59,9 @@
 		            <a href="#" onclick="deleteConfirm('<%=rs.getString("p_id")%>')" class="btn btn-danger" role="button">삭제 &raquo;></a>
 		            <%
 		                 }
-		            %>				
+		            %>				 -->
+                        
+                    
 	            </div>
 	            <%
 		            }
