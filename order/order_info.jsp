@@ -1,4 +1,18 @@
 <%@ page contentType = "text/html;charset=utf-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+
+<%
+	Date nowDate = new Date();
+	SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
+    
+    Date nextDate = new Date(
+        nowDate.getYear(),
+        nowDate.getMonth(),
+        nowDate.getDate() + 1
+    );
+    
+%>
 
 <html>
     <head>
@@ -16,6 +30,7 @@
 		        <h1 class="display-3">배송 정보</h1>
 	       </div>
 	    </div>
+        
 	    <div class="container">
             <form action="order_info_process.jsp" class="form-horizontal" method="post">
                <input type="hidden" name="cartId" value="<%=request.getParameter("cartId")%>" />
@@ -28,58 +43,7 @@
                 <div class="form-group row">
 	                <label class="col-sm-2">배송일</label>
 	                <div class="col-sm-4">
-                        <!-- <select name="shippingDate_year">
-                            <option value = "2022"> 2022 </option>
-                            <option value = "2023"> 2023 </option>
-                        </select>
-                        <select name="shippingDate_month">
-                            <option value = "1"> 1 </option>
-                            <option value = "2"> 2 </option>
-                            <option value = "3"> 3 </option>
-                            <option value = "4"> 4 </option>
-                            <option value = "5"> 5 </option>
-                            <option value = "6"> 6 </option>
-                            <option value = "7"> 7 </option>
-                            <option value = "8"> 8 </option>
-                            <option value = "9"> 9 </option>
-                            <option value = "10"> 10 </option>
-                            <option value = "11"> 11 </option>
-                            <option value = "12"> 12 </option>
-                        </select>
-                        <select name="shippingDate_day">
-                            <option value = "1"> 1 </option>
-                            <option value = "2"> 2 </option>
-                            <option value = "3"> 3 </option>
-                            <option value = "4"> 4 </option>
-                            <option value = "5"> 5 </option>
-                            <option value = "6"> 6 </option>
-                            <option value = "7"> 7 </option>
-                            <option value = "8"> 8 </option>
-                            <option value = "9"> 9 </option>
-                            <option value = "10"> 10 </option>
-                            <option value = "11"> 11 </option>
-                            <option value = "12"> 12 </option>
-                            <option value = "13"> 13 </option>
-                            <option value = "14"> 14 </option>
-                            <option value = "15"> 15 </option>
-                            <option value = "16"> 16 </option>
-                            <option value = "17"> 17 </option>
-                            <option value = "18"> 18 </option>
-                            <option value = "19"> 19 </option>
-                            <option value = "20"> 20 </option>
-                            <option value = "21"> 21 </option>
-                            <option value = "22"> 22 </option>
-                            <option value = "23"> 23 </option>
-                            <option value = "24"> 24 </option>
-                            <option value = "25"> 25 </option>
-                            <option value = "26"> 26 </option>
-                            <option value = "27"> 27 </option>
-                            <option value = "28"> 28 </option>
-                            <option value = "29"> 29 </option>
-                            <option value = "30"> 30 </option>
-                            <option value = "31"> 31 </option>
-                        </select> -->
-		                <input name="shippingDate" type="text" class="form-control" />(yyyy/mm/dd)
+		                <input name="shippingDate" type="date" value="<%= sf.format(nextDate)%>" min="<%= sf.format(nextDate)%>" class="form-control" />
 	                </div>
 	            </div>
 	            <div class="form-group row">
@@ -90,43 +54,18 @@
                             <option> 일본 </option>
                             <option> 중국 </option>
                             <option> 미국 </option>
-                            <!-- 
-                            <option value = "한국"> 한국 </option>
-                            <option value = "일본"> 일본 </option>
-                            <option value = "중국"> 중국 </option>
-                            <option value = "미국"> 미국 </option> 
-                            -->
+                            <!-- <option value="한국"> 한국 </option>
+                            <option value="일본"> 일본 </option>
+                            <option value="중국"> 중국 </option>
+                            <option value="미국"> 미국 </option> -->
                         </select>
-		                <!-- <input name="country" type="text" class="form-control" /> -->
 	                </div>
 	            </div>
 	            <div class="form-group row">
 	                <label class="col-sm-2">우편번호</label>
 	                <div class="col-sm-4">
-                        <input name="zipCode" value="14256" type="text" class="form-control"/>
-                        <button type="button" onclick="openMap()"> 우편번호 찾기 </button>
-                        <script>
-                            
-                            function openMap() {
-                                window.open("../popup/popup_map.jsp", "popup", "width=500, height=450, left=0, top=0")
-                            <%
-                                request.setCharacterEncoding("UTF-8");
-                                String postcode = request.getParameter("input_postnum");
-                            %>
-                                
-                                $('input[name=zipCode]').attr('value',"<%=postcode%>");
-                            }
-                            
-                        </script>
-                        
-	 	                <!-- <input name="zipCode" type="text" class="form-control" /> -->
+                        <%@ include file="./postcode.jsp" %>
 	                </div>
-	            </div>
-                <div class="form-group row">
-	                <label class="col-sm-2">상세주소</label>
-	                     <div class="col-sm-5">
-		                    <input name="addressName" type="text" class="form-control" />
-	                     </div>
 	            </div>
 	            <div class="form-group row">
 	                <div class="col-sm-offset-2 col-sm-10 ">

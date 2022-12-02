@@ -8,7 +8,7 @@
         response.sendRedirect("product_cart.jsp");
         return;
     }
-
+    
     session.invalidate();	// 세션 초기화
 
     response.sendRedirect("product_cart.jsp");
