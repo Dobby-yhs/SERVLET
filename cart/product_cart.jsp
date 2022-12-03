@@ -28,11 +28,6 @@
          <tr>
             <td align="left"><a href="product_cart_remove_all.jsp?cartId=<%=cartId%>" class="btn btn-danger">삭제하기</a></td>
             <td align="right"><a href="../order/order_info.jsp?cartId=<%=cartId%>" onclick="check_Session()" class="btn btn-success">주문하기</a></td>
-            <script>
-                function check_Session() {
-                    
-                }
-            </script>
          </tr>
       </table>
     </div>
@@ -55,7 +50,7 @@
                 Product product = cartList.get(i);
                 int total = product.getUnitPrice() * product.getQuantity();
                 sum = sum + total;
-                if (cartList == null) {
+                if (cartList != null) {
          %>
          <tr>
             <td><%=product.getProductId()%> - <%=product.getPname()%></td>
@@ -64,12 +59,6 @@
             <td><%=total%></td>
             <td><a href="product_cart_remove.jsp?id=<%=product.getProductId()%>" class="badge badge-danger">삭제</a></td>
          </tr>
-         <%
-                }
-                else {
-                    
-         %>
-            <td text-align="center">장바구니가 비어져있습니다.</td>
          <%
                 }
             }

@@ -9,7 +9,15 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script type ="text/javascript" src ="../js/validation.js"></script>
         <title>상품 편집</title>
-
+    
+        <script type="text/javascript">
+	        function deleteConfirm(id) {
+		        if (confirm("해당 상품을 삭제합니다!!") == true)
+		           location.href = "product_delete_process.jsp?id=" + id;
+		        else
+		           return;
+	        }
+        </script>
     <%
     	String edit = request.getParameter("edit");
     %>
@@ -37,22 +45,7 @@
 		            <p><%=rs.getString("p_description")%>
 		            <p><%=rs.getString("p_unitPrice")%>원
 		            <p>
-                        <a href="product_update.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-success" role="button"> 수정 &raquo;></a>
-		            
-                        
-                    <!-- <%
-		                 if (edit.equals("update")) {
-		            %>
-		            <a href="product_update.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-success" role="button"> 수정 &raquo;></a>
-		            <%
-		                 } else if (edit.equals("delete")) {
-		            %>
-		            <a href="#" onclick="deleteConfirm('<%=rs.getString("p_id")%>')" class="btn btn-danger" role="button">삭제 &raquo;></a>
-		            <%
-		                 }
-		            %>				 -->
-                        
-                    
+                        <input type="submit" class="btn btn-danger" href="./product_delete_process.jsp" value="삭제 &raquo;>" onclick="deleteConfirm('<%=rs.getString("p_id")%>')">
 	            </div>
 	            <%
 		            }

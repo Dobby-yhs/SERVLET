@@ -14,7 +14,7 @@
         
         <script type = "text/javascript">
         	function addToCart() {
-                if (confirm("상품을 장바구니에 추가하시겠습니까?")) {
+                if (confirm("상품을 장바구니에 추가하시겠습니까?") == true) {
                     document.addForm.submit();
                 } else {
                     document.addForm.reset();
@@ -48,8 +48,8 @@
                
                          
                     <p>
-                        <form name = "addForm" action="cart/product_cart_add.jsp?id=<%=product.getProductId()%>" method="post">
-                            <a href="#" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo; </a>
+                    <form name = "addForm" action="cart/product_cart_add.jsp?id=<%=product.getProductId()%>" method="post">
+                            <a href="product_detail.jsp?id=<%=product.getProductId()%>" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo; </a>
                             <a href="cart/product_cart.jsp" class="btn btn-warning"> 장바구니 &raquo; </a>
 					</form>
                     

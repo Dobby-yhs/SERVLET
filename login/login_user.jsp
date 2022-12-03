@@ -37,8 +37,9 @@
                         <lavel for = "inputPassword" class="sr-only">Password</lavel>
                         <input type="password" class="form-control" placeholder="Password" name='j_password' required>
                     </div>
-                    <button class="btn btn btn-lg btn-success btn-block" type="submit"> 로그인 </button>
+                    <button href="../admin/index_ad.jsp" class="btn btn btn-lg btn-success btn-block" type="submit"> 로그인 </button>
                 </form>
+                <a href="../member/member_join.jsp" class="btn btn btn-lg btn-success btn-block" role="button"> 회원가입 </a>
             </div>
         </div>
     </body>

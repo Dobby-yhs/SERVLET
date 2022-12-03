@@ -66,11 +66,21 @@
 	                <div class="form-group row">
 		                <label class="col-sm-2">분류</label>
 		                <div class="col-sm-3">
-			                <input type="text" name="category" class="form-control" value="<%=rs.getString("p_category")%>">
+			                <select id="category" name="category" class="form-control">
+                                <option value="ZipUp">집업</option>
+                                <option value="Mtm">맨투맨</option>
+                                <option value="Shirt">셔츠</option>
+                                <option value="Coat">코트</option>
+                                <option value="Cardigan">가디건</option>
+                                <option value="Jacket">자켓</option>
+                                <option value="Knit">니트</option>
+                                <option value="Blouson">블루종</option>
+                                <option value="Blazer">블레이저</option>
+                            </select>
 		                </div>
 	                </div>
 	                <div class="form-group row">
-		                <label class="col-sm-2">제고 수</label>
+		                <label class="col-sm-2">재고 수</label>
 		                <div class="col-sm-3">
 			                <input type="text" id="unitslnStock" name="unitslnStock" class="form-control" value="<%=rs.getLong("p_unitslnStock")%>">
 		                </div>

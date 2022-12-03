@@ -8,52 +8,50 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script type ="text/javascript" src ="../js/validation.js"></script>
-        <title>상품 편집</title>
-
-    <%
-    	String edit = request.getParameter("edit");
-    %>
+        <title>회원 관리</title>
+        
+        <script type="text/javascript">
+	        function deleteConfirm(id) {
+		        if (confirm("해당 계정을 삭제합니다!!") == true)
+		           location.href = "member_delete_process.jsp?id=" + id;
+		        else
+		           return;
+	        }
+        </script>
     </head>
     <body>
-        <jsp:include page="top_menu_ad.jsp" />
+        <jsp:include page="/admin/top_menu_ad.jsp" />
         <div class="jumbotron">
 	           <div class="container">
-		            <h1 class="display-3">상품 편집</h1>
+		            <h1 class="display-3">회원 관리</h1>
 	           </div>
 	    </div>
     
 	    <div class="container">
-	        <div class="row" align="center">
+	        <div class="row" align="left">
 		    <%@ include file="../db/db_conn.jsp"%>
 		    <%
-    			String sql = "select * from product";
+    			String sql = "select * from member";
        			pstmt = conn.prepareStatement(sql);
     			rs = pstmt.executeQuery();
     			while (rs.next()) {
 	    	%>
 		        <div class="col-md-4">
-                    <img src="../image/product/<%=rs.getString("p_fileName")%>" class="card-img" alt="...">
-		            <h3><%=rs.getString("p_name")%></h3>
-		            <p><%=rs.getString("p_description")%>
-		            <p><%=rs.getString("p_unitPrice")%>원
-		            <p>
-                        <a href="product_update.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-success" role="button"> 수정 &raquo;></a>
-		            
-                        
-                    <!-- <%
-		                 if (edit.equals("update")) {
-		            %>
-		            <a href="product_update.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-success" role="button"> 수정 &raquo;></a>
-		            <%
-		                 } else if (edit.equals("delete")) {
-		            %>
-		            <a href="#" onclick="deleteConfirm('<%=rs.getString("p_id")%>')" class="btn btn-danger" role="button">삭제 &raquo;></a>
-		            <%
-		                 }
-		            %>				 -->
-                        
-                    
+		            <p>ID  : <%=rs.getString("id")%></p>
+		            <p>이름 : <%=rs.getString("name")%></p>
+		            <p>성별 : <%=rs.getString("gender")%></p>
+		            <p>생년월일 :<%=rs.getString("birth")%></p>
+                    <p>메일 : <%=rs.getString("mail")%></p>
+                    <p>핸드폰 번호 : <%=rs.getString("phone")%></p>
+                    <p>주소 : <%=rs.getString("address")%></p>
+                    <p>등록 날짜 : <%=rs.getString("regist_day")%></p>
+                    <p>
+                        <a href="./member_update.jsp?id=<%=rs.getString("id")%>" class="btn btn-success" role="button"> 수정 &raquo;></a>
+                        <input type="submit" class="btn btn-danger" href="./member_delete_process.jsp" value="삭제 &raquo;>" onclick="deleteConfirm('<%=rs.getString("id")%>')">\
+                    </p>                
 	            </div>
+                
+                
 	            <%
 		            }
 		            if (rs != null)
@@ -66,7 +64,7 @@
 	        </div>
 	        <hr>
         </div>
-        <jsp:include page="footer_ad.jsp" />
+        <jsp:include page="../admin/footer_ad.jsp" />
     </body>
 </html>
 
